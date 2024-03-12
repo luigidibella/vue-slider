@@ -4,7 +4,7 @@ createApp({
 
   data(){
     return{
-      counterImg: 0,
+      counter: 0,
       images:[
         {
             url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -37,11 +37,21 @@ createApp({
   },
 
   methods:{
+    nextPrev(isNext){
+      isNext ? this.counter++ : this.counter--;
+
+      if(this.counter === this.images.length){
+        this.counter = 0
+      }else if(this.counter < 0){
+        this.counter = this.images.length - 1;
+      }
+
+    },
 
   },
 
   mounted() {
-    console.log(this.counterImg);
+    console.log(this.counter);
     console.log(this.images);
   }
 
