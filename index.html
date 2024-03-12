@@ -26,7 +26,7 @@
 <body>
 
     <main>
-        <div class="container-fluid p-5">
+        <div class="container-fluid p-5" id="app" >
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
 
@@ -36,7 +36,15 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images output">
 
-                            <div class="my-carousel-item active">
+                            <div v-for="(image, indice) in images" class="my-carousel-item">
+                                <img class="img-fluid" :src="image.url" :alt="image.title">
+                                <div class="item-description px-3">
+                                    <h2>{{ image.title }}</h2>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="my-carousel-item">
                                 <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="${images[i].title} picture">
                                 <div class="item-description px-3">
                                     <h2>Svezia</h2>
@@ -66,15 +74,7 @@
                                     <h2>Svezia</h2>
                                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</p>
                                 </div>
-                            </div>
-
-                            <div class="my-carousel-item">
-                                <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="${images[i].title} picture">
-                                <div class="item-description px-3">
-                                    <h2>Svezia</h2>
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.</p>
-                                </div>
-                            </div>
+                            </div> -->
 
                         </div>
                         <div class="my-thumbnails position-relative output2">
@@ -83,7 +83,11 @@
                                 <span class="my-prev-hook"></span>
                             </div>
 
-                            <div class="my-thumbnail active">
+                            <div v-for="(image, indice) in images" class="my-thumbnail">
+                                <img class="img-fluid" :src="image.url" :alt="image.title">
+                            </div>
+
+                            <!-- <div class="my-thumbnail">
                                 <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
                             </div>
 
@@ -97,11 +101,7 @@
 
                             <div class="my-thumbnail">
                                 <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                            </div>
-
-                            <div class="my-thumbnail">
-                                <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                            </div>
+                            </div> -->
 
                             <!-- next -->
                             <div class="my-next position-absolute">
@@ -119,6 +119,6 @@
         </div>
     </main>
 
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
