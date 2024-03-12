@@ -91,6 +91,7 @@
                             v-for="(image, indice) in images" 
                             class="my-thumbnail"
                             :class="{'active':indice === counter}"
+                            @click="counter = indice"
                             >
                                 <img class="img-fluid" :src="image.url" :alt="image.title">
                             </div>
