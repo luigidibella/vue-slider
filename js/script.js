@@ -47,10 +47,18 @@ createApp({
       }
 
     },
+    autoPlay(){
+      setInterval( ()=> {
+        if(this.isPlayerActive){
+          this.nextPrev(true)
+        }
+      }, 3000)
+    }
 
   },
 
   mounted() {
+    this.autoPlay()
     console.log(this.counter);
     console.log(this.images);
   }
